@@ -1,29 +1,97 @@
 Feature: Wrapping text
 
-Scenario: Wrapping text defined with heredoc
+Scenario: Dos lineas
 	Given the string:
 """
-Here's is a string
-with line breaks and everything
-	Whoa here's a tab
+cleancode
 """
-	And column number 42
+	And column number 7
 	When I wrap the input
 	Then I should see:
-# The additional newlines are needed to match how the method returns a heredoc
+"""
+cleanco
+de
 """
 
-example text   word 
-next line goes here
-
+Scenario: Tres lineas
+	Given the string:
+"""
+cleancodebooktwo
+"""
+	And column number 7
+	When I wrap the input
+	Then I should see:
+"""
+cleanco
+debookt
+wo
 """
 
-#Scenario Outline: Wrapping text defined in example tables
-#	Given the string <text_to_wrap>
-#	And column number <column_number>
-#	When I wrap the input
-#	Then I should see <wrapped_text>
-#
-#Examples:
-#	| text_to_wrap																| column_number	| wrapped_text															|
-#	| example text 	 word next line goes here|	5							|	example text 	word next line goes here|
+Scenario: Dos lineas con un espacio
+	Given the string:
+"""
+clean code
+"""
+	And column number 7
+	When I wrap the input
+	Then I should see:
+"""
+clean
+code
+"""
+
+Scenario: Tres lineas con tres espacios
+	Given the string:
+"""
+clean coding book
+"""
+	And column number 7
+	When I wrap the input
+	Then I should see:
+"""
+clean
+coding
+book
+"""
+
+Scenario: Tres lineas con cuatro espacios
+	Given the string:
+"""
+cle an coding book
+"""
+	And column number 7
+	When I wrap the input
+	Then I should see:
+"""
+cle an
+coding
+book
+"""
+
+Scenario: Dos lineas con cinco espacios
+	Given the string:
+"""
+cle an coding book for sale
+"""
+	And column number 19
+	When I wrap the input
+	Then I should see:
+"""
+cle an coding book
+for sale
+"""
+
+
+Scenario: Dos lineas con cinco espacios
+	Given the string:
+"""
+cle an coding book forsaleeeeeeeeeeeee
+"""
+	And column number 19
+	When I wrap the input
+	Then I should see:
+"""
+cle an coding book
+forsaleeeeeeeeeeee
+e
+"""

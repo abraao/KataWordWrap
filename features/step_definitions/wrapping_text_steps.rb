@@ -7,7 +7,7 @@ Given(/^column number (\d+)$/) do |column_number|
 end
 
 When(/^I wrap the input$/) do
-  @actual_wrapped_text = Wrapper.new.wrap(@text_to_wrap, @column_number)
+  @actual_wrapped_text = Wrapper.new.wrap(@text_to_wrap, @column_number.to_i)
 end
 
 Then(/^I should see:$/) do |expected_wrapped_text|

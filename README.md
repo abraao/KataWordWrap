@@ -1,6 +1,6 @@
 # Word wrap coding kata
 
-## Description
+## Problem statement
 
 From <http://www.codingdojo.org/cgi-bin/index.pl?KataWordWrap>
 
@@ -16,12 +16,23 @@ Implemented during a [BCN Software Craftsmanship Coding Dojo](http://www.meetup.
 2. Install the dependencies with `bundle install`
 3. Run the tests with `bundle exec cucumber`
 
+## Status
+
+This is the code as it was at the end of the coding dojo. Don't take it as an indication of our best work :)
+
+In particular:
+
+* The last test is currently failing.
+* There are no comments.
+
 ## Resources
 
 * [Cucumber BDD testing framework](https://cucumber.io/)
 * [Word wrap coding kata](http://www.codingdojo.org/cgi-bin/index.pl?KataWordWrap)
 * [Barcelona Software Craftsmanship @ Meetup.com](http://www.meetup.com/Barcelona-Software-Craftsmanship/)
+* [The Craftsman 62, The Dark Path](http://thecleancoder.blogspot.com.es/2010/10/craftsman-62-dark-path.html)
 
 ## Contact
 
-Abra&atilde;o Louren&ccedil;o: <abraao@alourenco.com>
+* Javier Seixas <dev@javierseixas.com>
+* Abra&atilde;o Louren&ccedil;o: <abraao@alourenco.com>

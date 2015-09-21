@@ -13,9 +13,24 @@ class Wrapper
   # +text+: The text to be wrapped
   # +col_num+: The column at which to wrap
   def wrap(text, col_num)
-"""
-example text   word 
-next line goes here
-"""
+    espacio_idx = text.index " "
+    todas_partes = []
+    sobrante = text
+
+    while !espacio_idx.nil? && sobrante.size > col_num
+      espacio_cercano_idx = sobrante.rindex " ", col_num
+
+      if !espacio_cercano_idx.nil? && espacio_cercano_idx != espacio_idx
+        espacio_idx = espacio_cercano_idx
+      end
+      
+      todas_partes << sobrante[0..espacio_idx - 1]
+      sobrante = sobrante[espacio_idx + 1..sobrante.size - 1]
+      espacio_idx = sobrante.index " "
+    end
+    
+    todas_partes << sobrante.scan(/.{1,#{col_num}}/)
+    
+    return todas_partes.join "\n"
   end
 end
